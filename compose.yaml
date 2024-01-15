@@ -1,0 +1,18 @@
+version: "3"
+services:
+  dooocus:
+    container_name: dooocus
+    image: catnipwastaken/dooocus:latest
+    ports:
+      - "7865:7865/tcp"
+    volumes:
+      - </path/to/models>:/fooocus/models
+      - </path/to/saved/images>:/fooocus/outputs
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia # Amd cards have not been tested
+            count: 1
+            capabilities: [gpu]
+    restart: unless-stopped
