@@ -9,9 +9,16 @@ Available pytorch tags can be found here:
 [pytorch tags](https://hub.docker.com/r/pytorch/pytorch/tags)
 
 The minimum pytorch version is 2.0.0, which would make the minimum nvidia cuda driver version 11.7.
-Hopefully you can find this helpful
+Hopefully you can find this helpful.
+
+An example that would allow cards with the version 11.8:
+```Dockerfile
+FROM pytorch/pytorch:2.1.2-cuda11.8-cudnn8-runtime
+```
 
 ## Important!
 This is not an activly mantained repository. I've made so that the docker image will run the 'entry_with_update.py' on startup, to keep the fooocus application updated. This however may break compatibility with new updates made to pytorch. To solve this, it's possible to change the CMD command in the Dockerfile to:
+```Dockerfile
 CMD ['python3', 'launch.py', '--listen']
+```
 This will run the latest downloaded version of fooocus and, as long as at the time of testing it works, it will work indefinitely, skipping the update process.
