@@ -1,10 +1,12 @@
 # dooocus
 Fooocus by lllyasviel on docker
+This build has been uploaded to dockerhub at the following link:
+[dooocus on dockerhub](https://hub.docker.com/r/catnipwastaken/dooocus)
 
 # Building your own version
 To successfully build your own image, based on the available cuda version of your nvidia graphics card, it's possible to locally clone this repository and change the Dockerfile to allow graphics cards with old drivers to run this application. Consider that this has been tested only on a few versions and might require some work to get it to run. When testing the modified build it's recommended to download locally the Juggernaut stable diffusion model used by fooocus and map that drive to the models folder. This will cut the preparation time by skipping the download step. To change version, it's necessary to change the pytorch tag in the Dockerfile and then run the docker build.
 Available pytorch tags can be found here:
-https://hub.docker.com/r/pytorch/pytorch/tags
+[pytorch tags](https://hub.docker.com/r/pytorch/pytorch/tags)
 
 The minimum pytorch version is 2.0.0, which would make the minimum nvidia cuda driver version 11.7.
 Hopefully you can find this helpful
