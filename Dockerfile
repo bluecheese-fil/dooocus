@@ -1,4 +1,4 @@
-FROM pytorch/pytorch:latest
+FROM ubuntu:latest
 SHELL ["/bin/bash", "-c"]
 
 # Arguments
