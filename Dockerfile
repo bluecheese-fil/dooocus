@@ -17,7 +17,7 @@ RUN useradd -u $USER_ID foooser && git clone https://github.com/lllyasviel/Foooc
     mkdir /home/foooser/ && chown -R foooser /home/foooser && chmod -R 0760 /home/foooser && \
     chown -R foooser /fooocus && chmod -R 0760 /fooocus
 
-RUN touch /home/foooser/.bashrc && echo "export PATH=$PATH:/home/foooser/.local/bin" >> ~/.bashrc
+RUN touch /home/foooser/.bashrc && echo "export PATH=$PATH:/home/foooser/.local/bin" >> /home/foooser/.bashrc
 
 WORKDIR /fooocus
 USER foooser
